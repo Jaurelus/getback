@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tharven Aurelus Debt</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="min-h-screen flex flex-col">
+  <div id="navbar"></div>
+
+  <div class="relative flex-1 h-full w-screen h-screen">
+
+    <!-- Top corner boxes -->
+    <div class="corner-row corner-top">
+      <div class="box w-50">
+        <img src="images/dusty.png">
+      </div>
+      <div class="box w-50">
+        <img src="images/biggie.png">
+
+      </div>
+    </div>
+
+    <main class="w-full max-w-3xl mx-auto px-5 sm:px-8 pt-6 lg:pt-20 pb-6 lg:pb-14">
+
+      <p class="kicker mb-4">Still owed</p>
+      <h1 class="headline headline-xl"><span id="balance">$2,602</span></h1>
+
+      <p class="mt-6 sm:mt-8 max-w-xl sm:text-lg leading-relaxed" style="color: var(--ink-soft)">
+        Them folks that be out here living good for the internet be flagging. They front like they
+        living real good, and whole time they in crazy debt.
+      </p>
+
+      <!-- Progress -->
+      <section class="mt-10 sm:mt-14">
+        <div class="flex items-baseline justify-between mb-3 mono text-sm">
+          <span><strong id="bar-raised">$0</strong> paid back</span>
+          <span style="color: var(--ink-soft)">of <span id="bar-goal">$2,602</span></span>
+        </div>
+        <div class="bar">
+          <div id="bar-fill" class="bar-fill"></div>
+        </div>
+        <div class="flex justify-between mt-2 mono text-xs" style="color: var(--ink-soft)">
+          <span id="bar-percent">0%</span>
+          <span>Any day now.</span>
+        </div>
+      </section>
+
+      <!-- Next payment -->
+      <section class="receipt mt-10 sm:mt-14 grid grid-cols-2">
+        <div class="py-5 pr-4">
+          <p class="kicker mb-2" style="color: var(--ink-soft)">Next payment due</p>
+          <p class="receipt-value" id="next-due">December 15</p>
+        </div>
+        <div class="py-5 pl-5 sm:pl-8">
+          <p class="kicker mb-2" style="color: var(--ink-soft)">Amount</p>
+          <p class="receipt-value mono" id="next-amount">$300</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom corner boxes -->
+    <div class="corner-row corner-bottom mb-36 border-none">
+      <div class="box w-50 border-none">
+        <img src="images/don.png">
+
+      </div>
+      <div class="box border-none w-50">
+        <img src="images/dog.png">
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer py-6 text-center mono text-xs">
+    Updated as payments come in.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

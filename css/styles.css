@@ -1,0 +1,207 @@
+/* ---- Fonts ---- */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+/* ---- Colors ---- */
+:root {
+  --paper: #f3eee4;
+  --paper-dark: #e8e1d3;
+  --ink: #1d1b18;
+  --ink-soft: #5c574e;
+  --red: #c4381f;
+  --green: #2f6b3a;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .kicker {
+    letter-spacing: 0.1em;
+  }
+
+  .pull-quote {
+    font-size: 1.25rem;
+  }
+}
+
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* Small uppercase label above headings */
+.kicker {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.headline {
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+/* Headline sizes scale with screen width so long words never spill off a phone */
+.headline-xl {
+  font-size: clamp(3.25rem, 17vw, 8rem);
+}
+
+.headline-lg {
+  font-size: clamp(2.5rem, 13vw, 6rem);
+}
+
+/* Big numbers inside the receipt box */
+.receipt-value {
+  font-size: clamp(1.25rem, 5.5vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* ---- Navbar ---- */
+.site-nav {
+  border-bottom: 2px solid var(--ink);
+  background: var(--paper);
+}
+
+.site-nav a {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 0 2px; /* bigger tap area on phones */
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  border-bottom-color: var(--ink);
+}
+
+.site-nav a.active {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+/* ---- Progress bar ---- */
+.bar {
+  height: 28px;
+  border: 2px solid var(--ink);
+  background: var(--paper-dark);
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  transition: width 1.2s ease-out;
+}
+
+/* ---- Receipt-style box ---- */
+.receipt {
+  border-top: 2px dashed var(--ink);
+  border-bottom: 2px dashed var(--ink);
+}
+
+.receipt > * + * {
+  border-left: 1px solid var(--ink);
+}
+
+/* ---- Article text ---- */
+.prose-body p {
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.pull-quote {
+  border-left: 4px solid var(--red);
+  padding-left: 1.25rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+/* ---- Payments table ---- */
+.ledger {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ledger th {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--ink);
+  padding: 0.6rem 0;
+}
+
+.ledger td {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  border-bottom: 1px solid var(--paper-dark);
+  padding: 0.8rem 0;
+}
+
+.ledger th:last-child,
+.ledger td:last-child {
+  text-align: right;
+}
+
+/* ---- Boxes (About page) ---- */
+.box {
+  height: 5rem; /* h-20 */
+  border: 2px solid var(--ink);
+  background: var(--paper-dark);
+  flex-shrink: 0;
+}
+
+/* Corner boxes: on phones they sit above and below the text,
+   on wide screens they pin to the four corners of the page */
+.corner-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem; /* same side gutter as the text on phones (px-5) */
+}
+
+@media (min-width: 640px) {
+  .corner-row {
+    padding: 1.5rem 2rem; /* lines up with the text on tablets (sm:px-8) */
+  }
+}
+
+@media (min-width: 1024px) {
+  .corner-row {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    pointer-events: none;
+  }
+
+  .corner-top {
+    top: 0;
+  }
+
+  .corner-bottom {
+    bottom: 0;
+  }
+}
+
+.site-footer {
+  border-top: 1px solid var(--paper-dark);
+  color: var(--ink-soft);
+}

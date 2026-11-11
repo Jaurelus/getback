@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payments | My Site</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="min-h-screen flex flex-col">
+  <div id="navbar"></div>
+
+  <main class="flex-1 w-full max-w-2xl mx-auto px-5 sm:px-8 pt-10 sm:pt-20 pb-14">
+
+    <p class="kicker mb-4">Payment plan</p>
+    <h1 class="headline headline-lg mb-4">Payments</h1>
+    <p class="sm:text-lg mb-10 sm:mb-12" style="color: var(--ink-soft)">
+      Every payment gets logged here.
+    </p>
+
+    <table class="ledger">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Paid</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody id="ledger-body"></tbody>
+    </table>
+
+    <section class="receipt mt-10 sm:mt-14 grid grid-cols-2">
+      <div class="py-5 pr-4">
+        <p class="kicker mb-2" style="color: var(--ink-soft)">Next payment due</p>
+        <p class="receipt-value" id="next-due">December 15</p>
+      </div>
+      <div class="py-5 pl-5 sm:pl-8">
+        <p class="kicker mb-2" style="color: var(--ink-soft)">Amount</p>
+        <p class="receipt-value mono" id="next-amount">$300</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer py-6 text-center mono text-xs">
+    Updated as payments come in.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
